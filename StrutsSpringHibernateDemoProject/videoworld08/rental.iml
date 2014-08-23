@@ -91,7 +91,19 @@
       <configuration>
         <fileset id="fileset1" name="XML Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/com/suthar/rentel/domain/service/CustomerServiceTest-context.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/applicationContext.xml</file>
         </fileset>
+      </configuration>
+    </facet>
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="" />
+        <datasource-mapping>
+          <factory-entry name="entityManagerFactory" value="dataSource" />
+          <factory-entry name="personPersistenceUnit" value="dataSource" />
+        </datasource-mapping>
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/persistence.xml" />
       </configuration>
     </facet>
   </component>
@@ -481,6 +493,17 @@
     <orderEntry type="library" name="spring-aop-4.0.6.RELEASE" level="project" />
     <orderEntry type="library" name="hibernate-core-4.3.6.Final (1)" level="project" />
     <orderEntry type="library" name="hibernate-jpa-2.0-api-1.0.1.Final" level="project" />
+    <orderEntry type="library" name="spring-framework-bom-4.0.6.RELEASE" level="project" />
+    <orderEntry type="library" name="hibernate-core-3.6.0.Final.jar" level="project" />
+    <orderEntry type="library" name="hibernate-core-3.6.0.Final" level="project" />
+    <orderEntry type="library" name="spring-aop-4.0.6.RELEASE (2)" level="project" />
+    <orderEntry type="library" name="spring-aop-4.0.6.RELEASE (3)" level="project" />
+    <orderEntry type="library" name="spring-aop-4.0.6.RELEASE (4)" level="project" />
+    <orderEntry type="library" name="aopalliance-1.0" level="project" />
+    <orderEntry type="library" name="hibernate-3.6.0-Final" level="project" />
+    <orderEntry type="library" name="dom4j-1.6.1" level="project" />
+    <orderEntry type="library" name="slf4j-api-1.7.5" level="project" />
+    <orderEntry type="library" name="jboss-transaction-api-1.0.1.GA" level="project" />
   </component>
 </module>
 
