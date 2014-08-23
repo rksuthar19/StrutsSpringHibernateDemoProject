@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="spring-context-3.2.0.RELEASE">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-context-3.2.0.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
