@@ -2,6 +2,7 @@ package com.suthar.rentel.domain.service;
 
 import com.suthar.rentel.domain.model.Customer;
 import com.suthar.rentel.domain.model.Transaction;
+import junit.framework.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,10 @@ public class CustomerServiceTest {
     private CustomerService customerService;
 
     @Test
-    @Transactional
     public void testSaveCustomer() {
-        customerService.saveCustomer(new Customer("suthar"));
+        Customer customer = new Customer("suthar");
+        customer=customerService.saveCustomer(customer);
+        Customer savedCustomer = customerService.getCustomer(customer.getId());
+        Assert.assertEquals("suthar",savedCustomer.getName());
     }
 }
