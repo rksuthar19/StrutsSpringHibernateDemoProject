@@ -2,11 +2,9 @@ package com.suthar.rentel.domain.model;
 
 import com.suthar.rentel.domain.strategy.ChargeStrategy;
 import com.suthar.rentel.domain.strategy.RewardPointsStrategy;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Set;
 
 /**
@@ -16,7 +14,9 @@ import java.util.Set;
 @Table(name = "CUSTOMER")
 public class Customer {
     @Id
-    private Long id;
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid")
+    private String id;
     @Column
     private String name;
 
