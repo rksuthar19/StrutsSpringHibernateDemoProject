@@ -1,0 +1,29 @@
+<component name="libraryTable">
+  <library name="spring-aop-4.0.6.RELEASE">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-aop-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-aspects-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-beans-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-build-src-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-context-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-context-support-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-core-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-expression-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-instrument-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-instrument-tomcat-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-jdbc-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-jms-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-messaging-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-orm-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-oxm-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-test-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-tx-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-web-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-webmvc-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-webmvc-portlet-4.0.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/runtime/spring-websocket-4.0.6.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

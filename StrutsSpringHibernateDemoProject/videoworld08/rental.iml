@@ -478,6 +478,9 @@
     <orderEntry type="library" name="mockito-all-1.9.5" level="project" />
     <orderEntry type="library" name="ojdbc6" level="project" />
     <orderEntry type="library" name="spring-context-3.2.0.RELEASE" level="project" />
+    <orderEntry type="library" name="spring-aop-4.0.6.RELEASE" level="project" />
+    <orderEntry type="library" name="hibernate-core-4.3.6.Final (1)" level="project" />
+    <orderEntry type="library" name="hibernate-jpa-2.0-api-1.0.1.Final" level="project" />
   </component>
 </module>
 
