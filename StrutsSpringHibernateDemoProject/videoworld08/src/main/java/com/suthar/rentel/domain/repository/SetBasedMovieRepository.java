@@ -13,9 +13,11 @@ import java.util.Set;
 @Scope(value = "singleton")
 @Component
 public class SetBasedMovieRepository extends SetBasedRepository<Movie> implements MovieRepository {
+/*
     public SetBasedMovieRepository() {
         super(Repo.movieList);
     }
+*/
 
     @Override
     public Set<Movie> withTitles(final String... titles) {

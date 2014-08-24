@@ -28,7 +28,7 @@ public class MovieService {
     }
 
     @Transactional
-    public Movie saveCustomer(Movie movie) {
+    public Movie saveMovie(Movie movie) {
         return entityManager.merge(movie);
     }
 }

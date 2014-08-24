@@ -26,4 +26,14 @@ public class CustomerServiceTest {
         Customer savedCustomer = customerService.getCustomer(customer.getId());
         Assert.assertEquals("suthar",savedCustomer.getName());
     }
+
+    @Test
+    public void setUpCustomers(){
+        Customer customer1 = new Customer("James Madison");
+        Customer customer2 = new Customer("Zackery Taylor");
+        Customer customer3 = new Customer("Benjamin Harrison");
+        customerService.saveCustomer(customer1);
+        customerService.saveCustomer(customer2);
+        customerService.saveCustomer(customer3);
+    }
 }
