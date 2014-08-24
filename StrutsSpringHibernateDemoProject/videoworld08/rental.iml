@@ -103,7 +103,7 @@
           <factory-entry name="entityManagerFactory" value="dataSource" />
           <factory-entry name="personPersistenceUnit" value="dataSource" />
         </datasource-mapping>
-        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/persistence.xml" />
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
       </configuration>
     </facet>
   </component>
