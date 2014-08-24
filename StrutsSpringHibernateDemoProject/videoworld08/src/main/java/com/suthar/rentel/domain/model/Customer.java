@@ -11,7 +11,7 @@ import java.util.Set;
  * Rakesh Kumar Suthar (rksuthar19@gmail.com)
  */
 @Entity
-@Table(name = "CUSTOMER")
+@Table
 public class Customer {
     @Id
     @GeneratedValue(generator = "uuid")
