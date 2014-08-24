@@ -1,17 +1,36 @@
 package com.suthar.rentel.domain.model;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 import org.joda.time.LocalDateTime;
 import org.joda.time.Period;
+
+import javax.persistence.*;
 
 /**
  * Rakesh Kumar Suthar (rksuthar19@gmail.com)
  */
+@Entity
+@Table
 public class Rental {
-    private final Movie movie;
-    private final Customer customer;
-    private final LocalDateTime rentedOn;
-    private final Period period;
+    @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid")
+    private String id;
+    @OneToOne
+    private Movie movie;
+    @OneToOne
+    private Customer customer;
+    @Column
+    private LocalDateTime rentedOn;
+    @Column
+    @Type(type="org.joda.time.Period")
+    private Period period;
+    @Column
     public boolean returnStatus;
+
+    public Rental() {
+    }
 
     public Rental(Customer customer, Movie movie, Period period, LocalDateTime rentedOn) {
         this.movie = movie;
