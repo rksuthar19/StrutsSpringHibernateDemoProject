@@ -42,7 +42,7 @@ public class SetBasedRentalRepository implements RentalRepository {
 
     @SuppressWarnings("unchecked")
     @Override
-    public Set<Rental> currentRentalsFor(final Customer customer) {
+    public List<Rental> currentRentalsFor(final Customer customer) {
         return selectSatisfying(new AndSpecification<Rental>(new RentalForCustomerSpecification(customer),
                 new CurrentRentalSpecification()));
     }
@@ -74,27 +74,27 @@ public class SetBasedRentalRepository implements RentalRepository {
     }
 
     @Override
-    public Set<Rental> selectAll(final Comparator<Rental> comparator) {
+    public List<Rental> selectAll(final Comparator<Rental> comparator) {
         final List<Rental> result = rentalService.getAllRentals();
         Collections.sort(result, comparator);
-        return new LinkedHashSet<Rental>(result);
+        return result;
     }
 
     @Override
-    public Set<Rental> selectSatisfying(final Specification<Rental> specification) {
-        return selectSatisfyingIntoCollection(specification, new HashSet<Rental>());
+    public List<Rental> selectSatisfying(final Specification<Rental> specification) {
+        return selectSatisfyingIntoCollection(specification);
     }
 
     @Override
-    public Set<Rental> selectSatisfying(final Specification<Rental> specification, final Comparator<Rental> comparator) {
-        final List<Rental> result = selectSatisfyingIntoCollection(specification, new ArrayList<Rental>());
+    public List<Rental> selectSatisfying(final Specification<Rental> specification, final Comparator<Rental> comparator) {
+        final List<Rental> result = selectSatisfyingIntoCollection(specification);
         Collections.sort(result, comparator);
-        return new LinkedHashSet<Rental>(result);
+        return result;
     }
 
     @Override
     public Rental selectUnique(final Specification<Rental> specification) throws NonUniqueObjectSelectedException {
-        final List<Rental> results = selectSatisfyingIntoCollection(specification, new ArrayList<Rental>());
+        final List<Rental> results = selectSatisfyingIntoCollection(specification);
         if (results.size() == 1) {
             return results.get(0);
         } else if (!results.isEmpty()) {
@@ -103,8 +103,8 @@ public class SetBasedRentalRepository implements RentalRepository {
         return null;
     }
 
-    private <C extends Collection<Rental>> C selectSatisfyingIntoCollection(final Specification<Rental> specification,
-                                                                            final C target) {
+    private List<Rental> selectSatisfyingIntoCollection(final Specification<Rental> specification) {
+        List<Rental> target = new ArrayList<Rental>();
         for (Rental object : rentalService.getAllRentals()) {
             if (specification.isSatisfiedBy(object)) {
                 target.add(object);

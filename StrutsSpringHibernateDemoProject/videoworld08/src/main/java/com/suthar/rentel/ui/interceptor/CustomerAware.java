@@ -6,5 +6,5 @@ import com.suthar.rentel.domain.model.Customer;
  * Rakesh Kumar Suthar (rksuthar19@gmail.com)
  */
 public interface CustomerAware {
-	void setCustomer(Customer customer);
+    void setCustomer(Customer customer);
 }

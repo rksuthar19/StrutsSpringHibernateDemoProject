@@ -8,7 +8,6 @@ import com.suthar.rentel.domain.util.NullObjectAddedException;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Rakesh Kumar Suthar (rksuthar19@gmail.com)
@@ -20,11 +19,11 @@ public interface CustomerRepository {
 
     List<Customer> selectAll();
 
-    Set<Customer> selectAll(Comparator<Customer> comparator);
+    List<Customer> selectAll(Comparator<Customer> comparator);
 
-    Set<Customer> selectSatisfying(Specification<Customer> specification);
+    List<Customer> selectSatisfying(Specification<Customer> specification);
 
-    Set<Customer> selectSatisfying(Specification<Customer> specification, Comparator<Customer> comparator);
+    List<Customer> selectSatisfying(Specification<Customer> specification, Comparator<Customer> comparator);
 
     Customer selectUnique(Specification<Customer> specification) throws NonUniqueObjectSelectedException;
 }

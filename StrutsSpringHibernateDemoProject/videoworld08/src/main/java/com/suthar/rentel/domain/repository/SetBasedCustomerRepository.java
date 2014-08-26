@@ -43,24 +43,24 @@ public class SetBasedCustomerRepository implements CustomerRepository {
         return customerService.getAllCustomers();
     }
 
-    public Set<Customer> selectAll(final Comparator<Customer> comparator) {
+    public List<Customer> selectAll(final Comparator<Customer> comparator) {
         final List<Customer> result = customerService.getAllCustomers();
         Collections.sort(result, comparator);
-        return new LinkedHashSet<Customer>(result);
+        return result;
     }
 
-    public Set<Customer> selectSatisfying(final Specification<Customer> specification) {
-        return selectSatisfyingIntoCollection(specification, new HashSet<Customer>());
+    public List<Customer> selectSatisfying(final Specification<Customer> specification) {
+        return selectSatisfyingIntoCollection(specification);
     }
 
-    public Set<Customer> selectSatisfying(final Specification<Customer> specification, final Comparator<Customer> comparator) {
-        final List<Customer> result = selectSatisfyingIntoCollection(specification, new ArrayList<Customer>());
+    public List<Customer> selectSatisfying(final Specification<Customer> specification, final Comparator<Customer> comparator) {
+        final List<Customer> result = selectSatisfyingIntoCollection(specification);
         Collections.sort(result, comparator);
-        return new LinkedHashSet<Customer>(result);
+        return result;
     }
 
     public Customer selectUnique(final Specification<Customer> specification) throws NonUniqueObjectSelectedException {
-        final List<Customer> results = selectSatisfyingIntoCollection(specification, new ArrayList<Customer>());
+        final List<Customer> results = selectSatisfyingIntoCollection(specification);
         if (results.size() == 1) {
             return results.get(0);
         } else if (!results.isEmpty()) {
@@ -69,8 +69,8 @@ public class SetBasedCustomerRepository implements CustomerRepository {
         return null;
     }
 
-    private <C extends Collection<Customer>> C selectSatisfyingIntoCollection(final Specification<Customer> specification,
-                                                                              final C target) {
+    private List<Customer> selectSatisfyingIntoCollection(final Specification<Customer> specification) {
+        List<Customer> target = new ArrayList<Customer>();
         for (Customer object : customerService.getAllCustomers()) {
             if (specification.isSatisfiedBy(object)) {
                 target.add(object);

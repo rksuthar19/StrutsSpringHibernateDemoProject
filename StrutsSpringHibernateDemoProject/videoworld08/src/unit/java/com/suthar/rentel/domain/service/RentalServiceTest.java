@@ -29,20 +29,20 @@ public class RentalServiceTest {
     public void testSaveRental() {
 
         Customer customer = new Customer("suthar");
-        customer=customerService.saveCustomer(customer);
+        customer = customerService.saveCustomer(customer);
 
         Movie avatar = new Movie("Avatar", MovieType.NEW);
         avatar = movieService.saveMovie(avatar);
 
-        Rental rental = new Rental(customer,avatar,1, new LocalDateTime());
-        rental= rentalService.saveRental(rental);
-        Assert.assertEquals("suthar",rental.getCustomer().getName());
-        Assert.assertEquals("Avatar",rental.getMovie().getTitle());
-        Assert.assertEquals(1,rental.getRentedForDays());
+        Rental rental = new Rental(customer, avatar, 1, new LocalDateTime());
+        rental = rentalService.saveRental(rental);
+        Assert.assertEquals("suthar", rental.getCustomer().getName());
+        Assert.assertEquals("Avatar", rental.getMovie().getTitle());
+        Assert.assertEquals(1, rental.getRentedForDays());
     }
 
     @Test
-    public void setUpCustomers(){
+    public void setUpCustomers() {
         Customer customer1 = new Customer("James Madison");
         Customer customer2 = new Customer("Zackery Taylor");
         Customer customer3 = new Customer("Benjamin Harrison");

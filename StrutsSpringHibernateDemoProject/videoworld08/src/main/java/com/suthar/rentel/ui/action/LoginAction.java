@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * Rakesh Kumar Suthar (rksuthar19@gmail.com)
@@ -28,7 +28,7 @@ public class LoginAction extends ActionSupport {
         this.customerName = customer;
     }
 
-    public Set<Customer> getCustomers() {
+    public List<Customer> getCustomers() {
         return repository.selectAll(new CustomersOrderedByNameComparator());
     }
 

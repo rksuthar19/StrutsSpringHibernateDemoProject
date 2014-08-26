@@ -10,7 +10,6 @@ import com.suthar.rentel.domain.util.NullObjectAddedException;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Rakesh Kumar Suthar (rksuthar19@gmail.com)
@@ -22,15 +21,15 @@ public interface RentalRepository {
 
     List<Rental> selectAll();
 
-    Set<Rental> selectAll(Comparator<Rental> comparator);
+    List<Rental> selectAll(Comparator<Rental> comparator);
 
-    Set<Rental> selectSatisfying(Specification<Rental> specification);
+    List<Rental> selectSatisfying(Specification<Rental> specification);
 
-    Set<Rental> selectSatisfying(Specification<Rental> specification, Comparator<Rental> comparator);
+    List<Rental> selectSatisfying(Specification<Rental> specification, Comparator<Rental> comparator);
 
     Rental selectUnique(Specification<Rental> specification) throws NonUniqueObjectSelectedException;
 
-    Set<Rental> currentRentalsFor(Customer customer);
+    List<Rental> currentRentalsFor(Customer customer);
 
     Rental findRental(Movie movie);
 }

@@ -17,10 +17,10 @@ public class ViewAdminActionTest {
         Set<Customer> users = new LinkedHashSet<Customer>();
         users.add(new Customer("John Doe"));
 
-       // SetBasedCustomerRepository customerRepository = new SetBasedCustomerRepository(users);
+        // SetBasedCustomerRepository customerRepository = new SetBasedCustomerRepository(users);
 
         ///ViewAdminAction action = new ViewAdminAction(customerRepository);
-       // assertThat(action.getUsers(), is(users));
+        // assertThat(action.getUsers(), is(users));
     }
 
 }

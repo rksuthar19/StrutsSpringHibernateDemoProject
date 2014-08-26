@@ -33,6 +33,6 @@ public class MovieService {
 
     @Transactional
     public List<Movie> getMovies(String... titles) {
-        return (List<Movie>) entityManager.createQuery("from "+Movie.class.toString()+" where title in"+titles);
+        return (List<Movie>) entityManager.createQuery("from " + Movie.class.toString() + " where title in" + titles);
     }
 }

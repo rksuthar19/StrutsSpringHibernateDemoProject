@@ -46,24 +46,27 @@ public class SetBasedMovieRepository implements MovieRepository {
     }
 
     @Override
-    public Set<Movie> selectAll(final Comparator<Movie> comparator) {
+    public List<Movie> selectAll(final Comparator<Movie> comparator) {
         final List<Movie> result = movieService.getAllMovies();
         Collections.sort(result, comparator);
-        return new LinkedHashSet<Movie>(result);
+        return result;
     }
+
     @Override
-    public Set<Movie> selectSatisfying(final Specification<Movie> specification) {
-        return selectSatisfyingIntoCollection(specification, new HashSet<Movie>());
+    public List<Movie> selectSatisfying(final Specification<Movie> specification) {
+        return selectSatisfyingIntoCollection(specification);
     }
+
     @Override
-    public Set<Movie> selectSatisfying(final Specification<Movie> specification, final Comparator<Movie> comparator) {
-        final List<Movie> result = selectSatisfyingIntoCollection(specification, new ArrayList<Movie>());
+    public List<Movie> selectSatisfying(final Specification<Movie> specification, final Comparator<Movie> comparator) {
+        final List<Movie> result = selectSatisfyingIntoCollection(specification);
         Collections.sort(result, comparator);
-        return new LinkedHashSet<Movie>(result);
+        return result;
     }
+
     @Override
     public Movie selectUnique(final Specification<Movie> specification) throws NonUniqueObjectSelectedException {
-        final List<Movie> results = selectSatisfyingIntoCollection(specification, new ArrayList<Movie>());
+        final List<Movie> results = selectSatisfyingIntoCollection(specification);
         if (results.size() == 1) {
             return results.get(0);
         } else if (!results.isEmpty()) {
@@ -72,8 +75,8 @@ public class SetBasedMovieRepository implements MovieRepository {
         return null;
     }
 
-    private <C extends Collection<Movie>> C selectSatisfyingIntoCollection(final Specification<Movie> specification,
-                                                                           final C target) {
+    private List<Movie> selectSatisfyingIntoCollection(final Specification<Movie> specification) {
+        List<Movie> target = new ArrayList<Movie>();
         for (Movie object : movieService.getAllMovies()) {
             if (specification.isSatisfiedBy(object)) {
                 target.add(object);

@@ -20,13 +20,13 @@ public class CustomerServiceTest {
     @Test
     public void testSaveCustomer() {
         Customer customer = new Customer("suthar");
-        customer=customerService.saveCustomer(customer);
+        customer = customerService.saveCustomer(customer);
         Customer savedCustomer = customerService.getCustomer(customer.getId());
-        Assert.assertEquals("suthar",savedCustomer.getName());
+        Assert.assertEquals("suthar", savedCustomer.getName());
     }
 
     @Test
-    public void setUpCustomers(){
+    public void setUpCustomers() {
         Customer customer1 = new Customer("James Madison");
         Customer customer2 = new Customer("Zackery Taylor");
         Customer customer3 = new Customer("Benjamin Harrison");
