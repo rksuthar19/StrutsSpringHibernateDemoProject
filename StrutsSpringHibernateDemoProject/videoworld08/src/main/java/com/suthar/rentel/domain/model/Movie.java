@@ -1,7 +1,5 @@
 package com.suthar.rentel.domain.model;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 
 /**
@@ -11,9 +9,8 @@ import javax.persistence.*;
 @Table
 public class Movie {
     @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid")
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     @Column
     private String title;
     @Column
@@ -35,7 +32,7 @@ public class Movie {
         return type;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 }

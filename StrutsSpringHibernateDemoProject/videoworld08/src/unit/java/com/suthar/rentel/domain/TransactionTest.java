@@ -2,7 +2,6 @@ package com.suthar.rentel.domain;
 
 import com.suthar.rentel.domain.model.*;
 import org.joda.time.LocalDateTime;
-import org.joda.time.Period;
 import org.junit.Test;
 
 import java.util.Collections;
@@ -22,8 +21,8 @@ public class TransactionTest {
     private static final Customer CUSTOMER_ONE = new Customer("James Cameron");
     private static final Customer CUSTOMER_TWO = new Customer("Quentin Tarantino");
 
-    private static final Rental RENTAL_ONE = new Rental(CUSTOMER_ONE, FINDING_NEMO, Period.days(1), new LocalDateTime());
-    private static final Rental RENTAL_TWO = new Rental(CUSTOMER_ONE, SHAWSHANK_REDEMPTION, Period.days(3), new LocalDateTime());
+    private static final Rental RENTAL_ONE = new Rental(CUSTOMER_ONE, FINDING_NEMO, 1, new LocalDateTime());
+    private static final Rental RENTAL_TWO = new Rental(CUSTOMER_ONE, SHAWSHANK_REDEMPTION, 3, new LocalDateTime());
 
     @Test
     public void shouldReturnDifferentRentalSetFromConstruction() {

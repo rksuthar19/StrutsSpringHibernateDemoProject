@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
-import java.util.Set;
+import java.util.List;
 
 /**
  * Rakesh Kumar Suthar (rksuthar19@gmail.com)
@@ -48,7 +48,7 @@ public class ReturnMoviesAction extends ActionSupport implements CustomerAware {
 
     @Override
     public String execute() throws Exception {
-        final Set<Movie> movies = movieRepository.withTitles(movieNames);
+        final List<Movie> movies = movieRepository.withTitles(movieNames);
         if (movies.iterator().hasNext()) {
             Rental rentalToReturn = rentalRepository.findRental(movies.iterator().next());
             rentalToReturn.setReturn();

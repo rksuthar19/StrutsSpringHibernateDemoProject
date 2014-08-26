@@ -1,7 +1,5 @@
 package com.suthar.rentel.domain.model;
 
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Type;
 import org.joda.time.LocalDateTime;
 import org.joda.time.Period;
 
@@ -14,9 +12,8 @@ import javax.persistence.*;
 @Table
 public class Rental {
     @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid")
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     @OneToOne
     private Movie movie;
     @OneToOne
@@ -24,18 +21,17 @@ public class Rental {
     @Column
     private LocalDateTime rentedOn;
     @Column
-    @Type(type="org.joda.time.Period")
-    private Period period;
+    private int rentedForDays;
     @Column
     public boolean returnStatus;
 
     public Rental() {
     }
 
-    public Rental(Customer customer, Movie movie, Period period, LocalDateTime rentedOn) {
+    public Rental(Customer customer, Movie movie, int rentedForDays, LocalDateTime rentedOn) {
         this.movie = movie;
         this.customer = customer;
-        this.period = period;
+        this.rentedForDays = rentedForDays;
         this.rentedOn = rentedOn;
         this.returnStatus = false;
     }
@@ -48,8 +44,8 @@ public class Rental {
         return customer;
     }
 
-    public Period getPeriod() {
-        return period;
+    public int getRentedForDays() {
+        return rentedForDays;
     }
 
     public LocalDateTime getRentedOn() {
@@ -57,7 +53,7 @@ public class Rental {
     }
 
     public LocalDateTime getEndDate() {
-        return rentedOn.plus(period);
+        return rentedOn.plus(Period.days(rentedForDays));
     }
 
     public boolean isReturned() {

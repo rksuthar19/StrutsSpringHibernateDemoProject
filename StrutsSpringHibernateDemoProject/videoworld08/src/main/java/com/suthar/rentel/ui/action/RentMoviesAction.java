@@ -10,12 +10,12 @@ import com.suthar.rentel.domain.repository.RentalRepository;
 import com.suthar.rentel.domain.repository.TransactionRepository;
 import com.suthar.rentel.ui.interceptor.CustomerAware;
 import org.joda.time.LocalDateTime;
-import org.joda.time.Period;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -56,13 +56,12 @@ public class RentMoviesAction extends ActionSupport implements CustomerAware {
 
     @Override
     public String execute() throws Exception {
-        final Set<Movie> movies = movieRepository.withTitles(movieNames);
+        final List<Movie> movies = movieRepository.withTitles(movieNames);
         LocalDateTime now = new LocalDateTime();
-        final Period rentalPeriod = Period.days(rentalDuration);
 
         final Set<Rental> rentals = new LinkedHashSet<Rental>();
         for (final Movie movie : movies) {
-            final Rental rental = new Rental(customer, movie, rentalPeriod, now);
+            final Rental rental = new Rental(customer, movie, rentalDuration, now);
             rentals.add(rental);
         }
 

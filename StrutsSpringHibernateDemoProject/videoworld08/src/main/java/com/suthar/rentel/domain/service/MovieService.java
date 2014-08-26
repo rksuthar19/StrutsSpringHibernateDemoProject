@@ -1,6 +1,5 @@
 package com.suthar.rentel.domain.service;
 
-import com.suthar.rentel.domain.model.Customer;
 import com.suthar.rentel.domain.model.Movie;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,7 +17,7 @@ public class MovieService {
     private EntityManager entityManager;
 
     @Transactional
-    public Movie getMovie(String id) {
+    public Movie getMovie(long id) {
         return entityManager.find(Movie.class, id);
     }
 
@@ -30,5 +29,10 @@ public class MovieService {
     @Transactional
     public Movie saveMovie(Movie movie) {
         return entityManager.merge(movie);
+    }
+
+    @Transactional
+    public List<Movie> getMovies(String... titles) {
+        return (List<Movie>) entityManager.createQuery("from "+Movie.class.toString()+" where title in"+titles);
     }
 }

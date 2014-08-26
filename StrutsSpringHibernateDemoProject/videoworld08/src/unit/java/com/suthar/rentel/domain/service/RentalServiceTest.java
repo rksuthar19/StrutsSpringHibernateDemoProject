@@ -6,7 +6,6 @@ import com.suthar.rentel.domain.model.MovieType;
 import com.suthar.rentel.domain.model.Rental;
 import junit.framework.Assert;
 import org.joda.time.LocalDateTime;
-import org.joda.time.Period;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,11 +34,11 @@ public class RentalServiceTest {
         Movie avatar = new Movie("Avatar", MovieType.NEW);
         avatar = movieService.saveMovie(avatar);
 
-        Rental rental = new Rental(customer,avatar,Period.days(1), new LocalDateTime());
+        Rental rental = new Rental(customer,avatar,1, new LocalDateTime());
         rental= rentalService.saveRental(rental);
         Assert.assertEquals("suthar",rental.getCustomer().getName());
         Assert.assertEquals("Avatar",rental.getMovie().getTitle());
-        Assert.assertEquals(Period.days(1),rental.getPeriod());
+        Assert.assertEquals(1,rental.getRentedForDays());
     }
 
     @Test

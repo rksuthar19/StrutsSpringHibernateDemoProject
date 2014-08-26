@@ -5,7 +5,6 @@ import com.suthar.rentel.domain.model.Movie;
 import com.suthar.rentel.domain.model.MovieType;
 import com.suthar.rentel.domain.model.Rental;
 import org.joda.time.LocalDateTime;
-import org.joda.time.Period;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -37,11 +36,11 @@ public class CustomerTest {
 
         mixedRentals = new LinkedHashSet<Rental>();
         LocalDateTime rentedOn = new LocalDateTime();
-        mixedRentals.add(new Rental(customer, montyPython, Period.days(3), rentedOn));
-        mixedRentals.add(new Rental(customer, ran, Period.days(1), rentedOn));
-        mixedRentals.add(new Rental(customer, laConfidential, Period.days(2), rentedOn));
-        mixedRentals.add(new Rental(customer, starTrek, Period.days(1), rentedOn));
-        mixedRentals.add(new Rental(customer, WallaceAndGromit, Period.days(6), rentedOn));
+        mixedRentals.add(new Rental(customer, montyPython, 3, rentedOn));
+        mixedRentals.add(new Rental(customer, ran, 1, rentedOn));
+        mixedRentals.add(new Rental(customer, laConfidential, 2, rentedOn));
+        mixedRentals.add(new Rental(customer, starTrek, 1, rentedOn));
+        mixedRentals.add(new Rental(customer, WallaceAndGromit, 6, rentedOn));
     }
 
     @Test

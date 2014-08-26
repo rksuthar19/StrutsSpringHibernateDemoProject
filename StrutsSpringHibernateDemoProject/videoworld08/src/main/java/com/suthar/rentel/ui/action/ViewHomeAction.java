@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * Rakesh Kumar Suthar (rksuthar19@gmail.com)
@@ -19,7 +19,7 @@ public class ViewHomeAction extends ActionSupport {
     @Autowired
     private MovieRepository movieRepository;
 
-    public Set<Movie> getMovies() {
+    public List<Movie> getMovies() {
         return movieRepository.selectAll();
     }
 

@@ -17,7 +17,7 @@ public class CustomerService {
     private EntityManager entityManager;
 
     @Transactional
-    public Customer getCustomer(String id) {
+    public Customer getCustomer(long id) {
         return entityManager.find(Customer.class, id);
     }
 

@@ -7,6 +7,7 @@ import com.suthar.rentel.domain.util.NullObjectAddedException;
 
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -17,7 +18,7 @@ public interface CustomerRepository {
 
     void add(Collection<Customer> entities) throws NullObjectAddedException;
 
-    Set<Customer> selectAll();
+    List<Customer> selectAll();
 
     Set<Customer> selectAll(Comparator<Customer> comparator);
 

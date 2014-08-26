@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * Rakesh Kumar Suthar (rksuthar19@gmail.com)
@@ -19,7 +19,7 @@ public class ViewAdminAction extends ActionSupport {
     @Autowired
     private CustomerRepository customerRepository;
 
-    public Set<Customer> getUsers() {
+    public List<Customer> getUsers() {
         return customerRepository.selectAll();
     }
 

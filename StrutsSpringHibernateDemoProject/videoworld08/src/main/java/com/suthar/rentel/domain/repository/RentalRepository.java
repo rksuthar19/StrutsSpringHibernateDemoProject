@@ -9,6 +9,7 @@ import com.suthar.rentel.domain.util.NullObjectAddedException;
 
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -19,7 +20,7 @@ public interface RentalRepository {
 
     void add(Collection<Rental> entities) throws NullObjectAddedException;
 
-    Set<Rental> selectAll();
+    List<Rental> selectAll();
 
     Set<Rental> selectAll(Comparator<Rental> comparator);
 

@@ -2,7 +2,6 @@ package com.suthar.rentel.domain.model;
 
 import com.suthar.rentel.domain.strategy.ChargeStrategy;
 import com.suthar.rentel.domain.strategy.RewardPointsStrategy;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -14,16 +13,15 @@ import java.util.Set;
 @Table
 public class Customer {
     @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid")
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     @Column
     private String name;
 
     public Customer() {
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
@@ -42,7 +40,7 @@ public class Customer {
         double totalRewardPoints = 0;
         for (Rental rental : newRentals) {
             // show figures for this rental
-            final Integer rentalDays = rental.getPeriod().getDays();
+            final int rentalDays = rental.getRentedForDays();
 
             double charge = ChargeStrategy.getCharge(rental.getMovie().getType(), rentalDays);
             result += "  " + rental.getMovie().getTitle() + "  -  $"

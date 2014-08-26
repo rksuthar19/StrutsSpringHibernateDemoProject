@@ -1,6 +1,5 @@
 package com.suthar.rentel.domain.service;
 
-import com.suthar.rentel.domain.model.Customer;
 import com.suthar.rentel.domain.model.Movie;
 import com.suthar.rentel.domain.model.MovieType;
 import junit.framework.Assert;
@@ -28,7 +27,7 @@ public class MovieServiceTest {
     }
 
     @Test
-    public void setUpCustomers() {
+    public void setUpMovies() {
         Movie avatar = new Movie("Avatar", MovieType.NEW);
         Movie upInTheAir = new Movie("Up In The Air", MovieType.CLASSICAL);
         Movie findingNemo = new Movie("Finding Nemo", MovieType.OLD);

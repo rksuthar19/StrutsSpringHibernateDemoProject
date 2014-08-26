@@ -7,6 +7,7 @@ import com.suthar.rentel.domain.util.NullObjectAddedException;
 
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -17,7 +18,7 @@ public interface MovieRepository {
 
     void add(Collection<Movie> entities) throws NullObjectAddedException;
 
-    Set<Movie> selectAll();
+    List<Movie> selectAll();
 
     Set<Movie> selectAll(Comparator<Movie> comparator);
 
@@ -27,5 +28,5 @@ public interface MovieRepository {
 
     Movie selectUnique(Specification<Movie> specification) throws NonUniqueObjectSelectedException;
 
-    Set<Movie> withTitles(String... titles);
+    List<Movie> withTitles(String... titles);
 }

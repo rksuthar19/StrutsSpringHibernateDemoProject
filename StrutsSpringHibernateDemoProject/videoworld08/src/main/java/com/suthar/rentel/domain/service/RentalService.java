@@ -1,6 +1,5 @@
 package com.suthar.rentel.domain.service;
 
-import com.suthar.rentel.domain.model.Customer;
 import com.suthar.rentel.domain.model.Rental;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,12 +17,12 @@ public class RentalService {
     private EntityManager entityManager;
 
     @Transactional
-    public Rental getRental(String id) {
+    public Rental getRental(long id) {
         return entityManager.find(Rental.class, id);
     }
 
     @Transactional
-    public List<Rental> getAllCRentals() {
+    public List<Rental> getAllRentals() {
         return (List<Rental>) entityManager.createQuery("from " + Rental.class.toString());
     }
 
