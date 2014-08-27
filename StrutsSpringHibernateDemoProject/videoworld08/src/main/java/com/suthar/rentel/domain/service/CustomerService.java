@@ -23,7 +23,7 @@ public class CustomerService {
 
     @Transactional
     public List<Customer> getAllCustomers() {
-        return (List<Customer>) entityManager.createQuery("from " + Customer.class.toString());
+        return entityManager.createQuery("from " + Customer.class.getName()).getResultList();
     }
 
     @Transactional

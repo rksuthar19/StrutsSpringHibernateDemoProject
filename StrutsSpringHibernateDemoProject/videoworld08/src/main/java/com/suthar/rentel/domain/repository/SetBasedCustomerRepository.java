@@ -44,7 +44,7 @@ public class SetBasedCustomerRepository implements CustomerRepository {
     }
 
     public List<Customer> selectAll(final Comparator<Customer> comparator) {
-        final List<Customer> result = customerService.getAllCustomers();
+        List<Customer> result = customerService.getAllCustomers();
         Collections.sort(result, comparator);
         return result;
     }
