@@ -147,6 +147,9 @@
             <echo message="starting jetty"/>
             <java classname="com.suthar.jetty.JettyServer"
                   classpathref="jetty.runtime.classpath" fork="true">
+                <jvmarg value="-Xdebug"/>
+                <jvmarg value="-Xnoagent"/>
+                <jvmarg value="-Xrunjdwp:transport=dt_socket,address=5556,server=y,suspend=y"/>
                 <arg value="@{war}"/>
                 <arg value="${application.port}"/>
             </java>
