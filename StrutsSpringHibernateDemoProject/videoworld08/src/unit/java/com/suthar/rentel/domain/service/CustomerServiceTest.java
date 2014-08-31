@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.List;
+
 /**
  * Rakesh Kumar Suthar (rksuthar19@gmail.com)
  */
@@ -23,6 +25,14 @@ public class CustomerServiceTest {
         customer = customerService.saveCustomer(customer);
         Customer savedCustomer = customerService.getCustomer(customer.getId());
         Assert.assertEquals("suthar", savedCustomer.getName());
+    }
+
+    @Test
+    public void testGetAllCustomers() {
+        Customer customer = new Customer("suthar");
+        customerService.saveCustomer(customer);
+        List<Customer> customerList = customerService.getAllCustomers();
+        Assert.assertTrue(customerList.size()>0);
     }
 
     @Test

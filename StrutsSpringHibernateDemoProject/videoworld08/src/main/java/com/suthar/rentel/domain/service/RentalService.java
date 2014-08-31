@@ -23,7 +23,7 @@ public class RentalService {
 
     @Transactional
     public List<Rental> getAllRentals() {
-        return (List<Rental>) entityManager.createQuery("from " + Rental.class.toString());
+        return entityManager.createQuery("from " + Rental.class.toString()).getResultList();
     }
 
     @Transactional
@@ -33,6 +33,6 @@ public class RentalService {
 
     @Transactional
     public List<Rental> getRentalByCustomerId(String customerId) {
-        return (List<Rental>) entityManager.createQuery("from " + Rental.class.toString() + " where customer.id = " + customerId);
+        return entityManager.createQuery("from " + Rental.class.toString() + " where customer.id = " + customerId).getResultList();
     }
 }
