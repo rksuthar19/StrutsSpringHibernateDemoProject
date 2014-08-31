@@ -149,7 +149,7 @@
                   classpathref="jetty.runtime.classpath" fork="true">
                 <jvmarg value="-Xdebug"/>
                 <jvmarg value="-Xnoagent"/>
-                <jvmarg value="-Xrunjdwp:transport=dt_socket,address=5555,server=y,suspend=y"/>
+                <jvmarg value="-Xrunjdwp:transport=dt_socket,address=5560,server=y,suspend=y"/>
                 <arg value="@{war}"/>
                 <arg value="${application.port}"/>
             </java>

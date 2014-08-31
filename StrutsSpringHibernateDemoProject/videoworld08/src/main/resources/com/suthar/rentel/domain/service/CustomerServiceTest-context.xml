@@ -10,17 +10,18 @@ http://www.springframework.org/schema/tx
 http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <context:component-scan base-package="com.suthar"/>
+    <context:annotation-config/>
 
     <bean id="entityManagerFactory"
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="persistenceUnitName" value="personPersistenceUnit"/>
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
-<!--        <property name="jpaProperties">
-            <props>
-                <prop key="hibernate.hbm2ddl.auto">create</prop>
-            </props>
-        </property> enable this when you require schema to be created once then comment out this-->
+        <!--        <property name="jpaProperties">
+                    <props>
+                        <prop key="hibernate.hbm2ddl.auto">create</prop>
+                    </props>
+                </property> enable this when you require schema to be created once then comment out this-->
         <property name="jpaDialect" ref="jpaDialect"/>
     </bean>
 
