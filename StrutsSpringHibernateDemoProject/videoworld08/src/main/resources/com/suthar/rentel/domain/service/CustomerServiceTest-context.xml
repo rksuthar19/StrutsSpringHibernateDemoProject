@@ -16,11 +16,11 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
         <property name="persistenceUnitName" value="personPersistenceUnit"/>
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
-        <property name="jpaProperties">
+<!--        <property name="jpaProperties">
             <props>
                 <prop key="hibernate.hbm2ddl.auto">create</prop>
             </props>
-        </property>
+        </property> enable this when you require schema to be created once then comment out this-->
         <property name="jpaDialect" ref="jpaDialect"/>
     </bean>
 
