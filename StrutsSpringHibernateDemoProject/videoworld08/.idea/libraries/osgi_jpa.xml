@@ -1,8 +1,6 @@
 <component name="libraryTable">
   <library name="osgi-jpa">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/runtime/osgi-jpa.jar!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC />
     <SOURCES />
   </library>

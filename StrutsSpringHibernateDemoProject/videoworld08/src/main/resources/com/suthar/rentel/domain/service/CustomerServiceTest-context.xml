@@ -1,3 +1,4 @@
+<!--
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -10,18 +11,18 @@ http://www.springframework.org/schema/tx
 http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <context:component-scan base-package="com.suthar"/>
-    <context:annotation-config/>
+    <context:annotation-config />
 
     <bean id="entityManagerFactory"
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="persistenceUnitName" value="personPersistenceUnit"/>
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
-        <!--        <property name="jpaProperties">
-                    <props>
-                        <prop key="hibernate.hbm2ddl.auto">create</prop>
-                    </props>
-                </property> enable this when you require schema to be created once then comment out this-->
+&lt;!&ndash;        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.hbm2ddl.auto">create</prop>
+            </props>
+        </property> enable this when you require schema to be created once then comment out this&ndash;&gt;
         <property name="jpaDialect" ref="jpaDialect"/>
     </bean>
 
@@ -49,4 +50,4 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
         <property name="password" value="suthar"/>
     </bean>
 
-</beans>
+</beans>-->

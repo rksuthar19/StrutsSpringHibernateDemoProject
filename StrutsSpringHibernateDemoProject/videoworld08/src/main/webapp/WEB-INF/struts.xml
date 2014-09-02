@@ -18,10 +18,10 @@
         <default-interceptor-ref name="defaultLoginStack"/>
 
         <global-results>
-            <result name="login" type="redirect">login</result>
+            <result name="login" type="redirect">login.action</result>
         </global-results>
 
-        <action name="" class="viewHomeAction">
+        <action name="/" class="viewHomeAction">
             <result type="freemarker">home.ftl</result>
         </action>
 

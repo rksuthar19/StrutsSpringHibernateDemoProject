@@ -15,7 +15,7 @@ import java.util.List;
  * Rakesh Kumar Suthar (rksuthar19@gmail.com)
  */
 @Scope(value = "prototype")
-@Component()
+@Component
 public class LoginAction extends ActionSupport {
 
     @Autowired
