@@ -1,5 +1,5 @@
 <sitemesh>
-    <property name="decorators-file" value="/WEB-INF/decorators.xml"/>
+    <property name="decorators-file" value="/WEB-INF/classes/decorators.xml"/>
     <excludes file="${decorators-file}"/>
 
     <page-parsers>

@@ -83,28 +83,26 @@
       <facet type="Struts2" name="Struts 2">
         <configuration>
           <fileset id="s2fileset" name="My Fileset " removed="false">
+            <file>file://$MODULE_DIR$/src/main/java/struts.xml</file>
             <file>jar://$MODULE_DIR$/lib/runtime/struts2-sitemesh-plugin-2.1.8.1.jar!/struts-plugin.xml</file>
             <file>jar://$MODULE_DIR$/lib/runtime/struts2-core-2.1.8.1.jar!/struts-default.xml</file>
             <file>jar://$MODULE_DIR$/lib/runtime/struts2-spring-plugin-2.1.8.1.jar!/struts-plugin.xml</file>
-            <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/struts.xml</file>
           </fileset>
-          <propertiesKeys disabled="true" />
+          <propertiesKeys disabled="false" />
         </configuration>
       </facet>
     </facet>
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset1" name="XML Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/resources/com/suthar/rentel/domain/service/CustomerServiceTest-context.xml</file>
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/applicationContext.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/com/suthar/rentel/domain/ui/action/LoginActionTest-context.xml</file>
         </fileset>
       </configuration>
     </facet>
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="true" />
-        <setting name="provider-name" value="" />
+        <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
           <factory-entry name="entityManagerFactory" value="dataSource" />
           <factory-entry name="personPersistenceUnit" value="dataSource" />
@@ -511,6 +509,7 @@
     <orderEntry type="library" name="slf4j-api-1.7.5" level="project" />
     <orderEntry type="library" name="jboss-transaction-api-1.0.1.GA" level="project" />
     <orderEntry type="library" name="\" level="project" />
+    <orderEntry type="library" name="selenium-server-standalone-2.42.2" level="project" />
   </component>
 </module>
 
